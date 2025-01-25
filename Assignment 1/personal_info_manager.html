@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <header> 
+        <h1> Personal Info Manager </h1>
+        <p> A webpage for <em>users</em> to <em>manage</em> their own personal information.</p>
+    </header>
+
+    <section>
+        <nav>
+            <a href="">Header</a> |
+            <a href="">Main</a> |
+            <a href="">Section</a> |
+            <a href="">Footer</a> |
+        </nav>
+    </section>
+
+    <main>
+    <br><br>
+    <h2> Add Information</h2>
+    <form> 
+        <!-- Category Dropdown Menu-->
+        <label for="category"><strong>Category:</strong></label>
+        <select name="category"> 
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+            <option value="Health">Health</option>
+        </select>
+
+        <!-- Information Description Text Input-->
+         <br>  <br> <!-- Line Break-->
+         <label for="Description"><strong>Description:</strong></label>
+        <input type="Description">
+
+        <!-- Expiry Date Calendar Picker-->
+        <br><br>
+        <label for="expiry"><strong>Expiry Date:</strong></label>
+        <input type="date" id="start" name="trip-start" value="2025-01-24" min="2025-01-14" max="2028-12-31" />
+        <br><br>
+        <button type="Submit">Submit</button>
+        <br><br>
+    </form>
+    </main>
+
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+    <section>
+    <table style="width:100%">
+        <br>
+        <!-- Header Row-->
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Information Description</th>
+                <th>Expiry Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <!-- Filler Table Information-->
+        <tbody>
+        <tr>
+            <td>John Balatro</td>
+            <td>I love playing Balatro</td>
+            <td>2025-02-06</td>
+            <td>                    
+                <button type="Edit">Edit</button>
+                <button type="Delete">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>John Cena</td>
+            <td>You can't see me</td>
+            <td> 2025-09-11</td>
+            <td>                    
+                <button type="Edit">Edit</button>
+                <button type="Delete">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Sonic</td>
+            <td>You're too slow</td>
+            <td>2025-01-24</td>
+            <td>                    
+                <button type="Edit">Edit</button>
+                <button type="Delete">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Brian Hu</td>
+            <td>Assignment 1</td>
+            <td>2025-01-24</td>
+            <td>                    
+                <button type="Edit">Edit</button>
+                <button type="Delete">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </section>
+
+    <br>
+    <!--Footer-->
+    <footer>
+        <p>Author: Brian Hu<br>
+        <a href="mailto:hege@example.com">hub5@mymacewan.ca</a></p>
+        <img src="img_girl.jpg" alt="Girl in a jacket">
+        <p style=" position: relative; bottom: 0; left: 0; width: 100%; text-align: center;">Copyright © 2025</p>	
+      </footer>
+</html>
