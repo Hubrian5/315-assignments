@@ -1,0 +1,94 @@
+header{
+    background-color: lightblue;
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+label, input{
+    display:block;
+}
+
+label{
+    margin-top:5px;
+}
+
+.gender-group {
+    margin-top: 5px;
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.gender-group label,
+.gender-group input{
+    display: inline-block;
+    margin-top: 0;
+}
+
+.hobbies-group {
+    display: block;
+    margin-top: 5px;
+}
+
+.hobbies-group label,
+.hobbies-group input {
+    display: inline-block;
+    margin-top: 0; 
+}
+
+input[type="submit"] {
+    margin-top: 5px;
+    padding: 10px 20px; 
+    background-color: #35aef5; 
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; 
+}
+
+section:last-of-type h2 {
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto; 
+    border-collapse: collapse; 
+}
+
+table, th, td {
+    border: 1px solid #000; 
+}
+
+th, td {
+    padding: 10px; 
+    text-align: left; 
+}
+
+th {
+    background-color: #f2f2f2; 
+}
+
+
+tbody tr:nth-child(odd) {
+    background-color: #70cfec; 
+}
+
+tbody tr:nth-child(even) {
+    background-color: #34bb8e; 
+}
+
+footer{
+    background-color:#a6ecaa;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
