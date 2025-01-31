@@ -1,66 +1,86 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="assignment-two-style.css">
+    <title>User Registration System</title>
+</head>
+<body>
     <header>
-        <link rel="stylesheet" href="assignment-two-style.css">
-
         <h1>User Registration System</h1>
         <nav>
-            <a href="">Home</a>
-            <a href="">Register</a>
-            <a href="">Users</a>
+            <a href="#">Home</a>
+            <a href="#">Register</a>
+            <a href="#">Users</a>
         </nav>
     </header>
-
+    
     <section>
         <h2>Register New User</h2>
-        <form>
-            <label for="Full Name">Full Name:</label>
-            <input type="Description">
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name">
+                </div>
 
-            <label for="Email">Email:</label>
-            <input type="Email">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" >
+                </div>
 
-            <label for="Password">Password:</label>
-            <input type="Password">
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
 
-            <label for="Country">Country:</label>
-            <input type="Country">
-
-            <label for="Province">Province:</label>
-            <input type="Province">
-
-            <label for="City">City:</label>
-            <input type="City">
-
-            <label for="Address">Address:</label>
-            <input type="Address">
-
-            <label for="Postal Code">Postal Code:</label>
-            <input type="Postal Code">
-
-            <!-- Gender Radial Buttons-->
-            <div class="gender-group">
-                <label>Gender:</label>
-                <input type="radio" id="male" name="sex" value="Male">
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="sex" value="Female">
-                <label for="female">Female</label>
-            </div>
-
-            <!--Checkboxes-->
-            <div class="hobbies-group">
-                <label>Hobbies:</label>
-                <input type="checkbox" id="biking" name="biking" value="Bike">
-                <label for="biking">Biking</label>
-                <input type="checkbox" id="gaming" name="gaming" value="Gaming">
-                <label for="gaming">Gaming</label>
-                <input type="checkbox" id="swimming" name="swimming" value="Swimming">
-                <label for="swimming">Swimming</label>
-            </div>
-
-            <!-- Submit Button-->
-             <input type="submit" value="Submit">   
-        </form>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country">
+                </div>
+                
+                <div class="form-group">
+                    <label for="province">Province:</label>
+                    <input type="text" id="province" name="province">
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="postal-code">Postal Code:</label>
+                    <input type="text" id="postal-code" name="postal-code">
+                </div>
+                
+                <div class="form-group gender-group">
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="sex" value="Male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="sex" value="Female">
+                    <label for="female">Female</label>
+                </div>
+                
+                <div class="form-group hobbies-group">
+                    <label>Hobbies:</label>
+                    <input type="checkbox" id="biking" name="hobbies" value="Biking">
+                    <label for="biking">Biking</label>
+                    <input type="checkbox" id="gaming" name="hobbies" value="Gaming">
+                    <label for="gaming">Gaming</label>
+                    <input type="checkbox" id="swimming" name="hobbies" value="Swimming">
+                    <label for="swimming">Swimming</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+        </div>
     </section>
 
     <section>
@@ -80,42 +100,43 @@
                     <td>John Doe</td>
                     <td>john.doe@example.com</td>
                     <td>Male</td>
-                    <td>123 Main St, City, Country</td>
+                    <td>123 Main St, Edmonton, Canada</td>
                     <td>Biking, Gaming</td>
                 </tr>
                 <tr>
                     <td>Jane Smith</td>
                     <td>jane.smith@example.com</td>
                     <td>Female</td>
-                    <td>456 Elm St, City, Country</td>
+                    <td>456 Elm St, New York City, America</td>
                     <td>Swimming</td>
                 </tr>
                 <tr>
                     <td>Alice Johnson</td>
                     <td>alice.johnson@example.com</td>
                     <td>Female</td>
-                    <td>789 Oak St, City, Country</td>
+                    <td>789 Oak St, John, Balatro</td>
                     <td>Biking, Swimming</td>
                 </tr>
                 <tr>
                     <td>Bob Brown</td>
                     <td>bob.brown@example.com</td>
                     <td>Male</td>
-                    <td>321 Pine St, City, Country</td>
+                    <td>321 Pine St, Johnny, Silverhands</td>
                     <td>Gaming</td>
                 </tr>
                 <tr>
                     <td>Charlie Davis</td>
                     <td>charlie.davis@example.com</td>
                     <td>Male</td>
-                    <td>654 Maple St, City, Country</td>
+                    <td>654 Maple St, Futurama, Obama</td>
                     <td>Biking, Gaming, Swimming</td>
                 </tr>
             </tbody>
         </table>
     </section>
-
+    
     <footer>
-        <p>Copyright © 2025</p>
+        <p>Copyright &copy; 2025</p>
     </footer>
+</body>
 </html>
