@@ -191,9 +191,12 @@ tbody tr:hover {
     background-color: #90caf9;
 }
 
-footer{
-    background-color:#b4d8f0;
+footer {
+    background: #007bff;
+    color: white;
     text-align: center;
-    padding-top: 5px;
-    padding-bottom: 10px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 30px;
 }
