@@ -82,9 +82,9 @@ label {
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
-    width: 100%;
+    width: 97%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* Input box line border */
     border-radius: 5px;
 }
 
