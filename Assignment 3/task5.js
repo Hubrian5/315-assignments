@@ -28,7 +28,7 @@ function analyzeStudentPerformance(students) {
 const students = [
     { name: "Alice", scores: [85, 92, 78] },
     { name: "Bob", scores: [80, 88, 92] },
-    { name: "Charlie", scores: [90, 85, 88] }
+    { name: "John", scores: [90, 85, 88] }
 ];
 
 const result = analyzeStudentPerformance(students);
