@@ -39,5 +39,40 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+// 
+router.get('/', async (req, res) => {
+  try {
+    const { 
+      _id, 
+      productName, 
+      deliveryDate, 
+      sort, 
+      order 
+    } = req.query;
 
+    const query = {};
+    if (_id) query._id = _id;
+    if (productName) query['productId.name'] = productName;
+    if (deliveryDate) {
+      const start = new Date(deliveryDate);
+      start.setHours(0, 0, 0, 0);
+      const end = new Date(deliveryDate);
+      end.setHours(23, 59, 59, 999);
+      query.deliveryDate = { $gte: start, $lte: end };
+    }
+
+    const sortOptions = {};
+    if (sort && ['quantity', 'deliveryDate'].includes(sort)) {
+      sortOptions[sort] = order === 'desc' ? -1 : 1;
+    }
+
+    const orders = await Order.find(query)
+      .populate('productId')
+      .sort(sortOptions);
+
+    res.json(orders);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 module.exports = router;
