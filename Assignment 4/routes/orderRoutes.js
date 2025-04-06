@@ -22,24 +22,13 @@ router.post('/', async (req, res) => {
     product.stock -= quantity;
     await product.save();
 
-    console.log('Order placed successfully:', order);
     res.status(201).json(order);
   } catch (err) {
-    console.error('Error placing order:', err);
     res.status(500).json({ message: err.message });
   }
 });
 
-// GET all orders
-router.get('/', async (req, res) => {
-  try {
-    const orders = await Order.find().populate('productId');
-    res.json(orders);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-// 
+// GET all orders with filtering
 router.get('/', async (req, res) => {
   try {
     const { 
@@ -50,22 +39,40 @@ router.get('/', async (req, res) => {
       order 
     } = req.query;
 
+    // Build the query object
     const query = {};
-    if (_id) query._id = _id;
-    if (productName) query['productId.name'] = productName;
+    
+    // Filter by order ID (exact match)
+    if (_id) {
+      query._id = _id;
+    }
+    
+    // Filter by product name (case-insensitive partial match)
+    if (productName) {
+      query['productId.name'] = { $regex: productName, $options: 'i' };
+    }
+    
+    // Filter by delivery date (whole day range)
     if (deliveryDate) {
-      const start = new Date(deliveryDate);
-      start.setHours(0, 0, 0, 0);
-      const end = new Date(deliveryDate);
-      end.setHours(23, 59, 59, 999);
-      query.deliveryDate = { $gte: start, $lte: end };
+      const startDate = new Date(deliveryDate);
+      startDate.setHours(0, 0, 0, 0);
+      
+      const endDate = new Date(deliveryDate);
+      endDate.setHours(23, 59, 59, 999);
+      
+      query.deliveryDate = {
+        $gte: startDate,
+        $lte: endDate
+      };
     }
 
+    // Build sort options
     const sortOptions = {};
     if (sort && ['quantity', 'deliveryDate'].includes(sort)) {
       sortOptions[sort] = order === 'desc' ? -1 : 1;
     }
 
+    // Execute query with population and sorting
     const orders = await Order.find(query)
       .populate('productId')
       .sort(sortOptions);
@@ -75,4 +82,5 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
 module.exports = router;
